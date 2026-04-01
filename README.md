@@ -51,11 +51,14 @@ This repository provides:
 ## Citation
 
 ```bibtex
-@article{zhu2026mind,
+@misc{zhu2026mindhitchdynamiccalibration,
   title={Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks},
-  author={Zhu, Morui and Zhu, Yongqi and Fu, Song and Yang, Qing},
-  journal={arXiv preprint arXiv:2603.23711},
-  year={2026}
+  author={Morui Zhu and Yongqi Zhu and Song Fu and Qing Yang},
+  year={2026},
+  eprint={2603.23711},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2603.23711},
 }
 ```
 
