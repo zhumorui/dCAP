@@ -1,0 +1,63 @@
+model:
+  backbone:
+    img_size: 518
+    patch_size: 14
+    embed_dim: 1024
+    aggregator_kwargs:
+      depth: 24
+      num_heads: 16
+      mlp_ratio: 4.0
+  head:
+    dim_in: 2048
+    trunk_depth: 4
+    num_heads: 16
+    mlp_ratio: 4
+    init_values: 0.01
+    trans_act: linear
+    quat_act: linear
+  checkpoint: ckpts/dcap.pth
+  freeze_aggregator: true
+
+loss:
+  loss_type: l1
+  gamma: 0.6
+  translation_weight: 1.0
+  rotation_weight: 1.0
+
+optim:
+  lr: 1.0e-4
+  weight_decay: 0.01
+
+data:
+  train:
+    root: data/stt4at
+    version: v1.0-mini
+    split: train
+    batch_size: 2
+    num_workers: 0
+    shuffle: true
+    pin_memory: false
+    seq_len: 6 # number of camera
+    sample_stride: 1
+    queue_length: 3 # number of frames 
+  val:
+    root: data/stt4at
+    version: v1.0-mini
+    split: val
+    batch_size: 2
+    num_workers: 0
+    shuffle: false
+    pin_memory: false
+    seq_len: 6 # number of camera 
+    sample_stride: 1
+    queue_length: 3 # number of frames
+
+train:
+  epochs: 24
+  log_interval: 10
+  work_dir: work_dirs/camera_pose_v3_jan_24
+  amp: true
+  lr_schedule:
+    warmup_epochs: 3
+    min_lr_ratio: 0.05
+  override_checkpoint: true

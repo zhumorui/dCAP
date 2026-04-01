@@ -1,16 +1,70 @@
-# Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks
-<img width="1143" height="587" alt="image" src="https://github.com/user-attachments/assets/177c9199-8137-4e67-9048-d37c20b1b01b" />
+<div align="center">
+
+<img src="docs/assets/unt-logo.svg" alt="University of North Texas" width="320">
+
+<h1>Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks</h1>
+
+<p>
+  <a href="https://arxiv.org/pdf/2603.23711" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Paper-CVPR_2026-red" alt="Paper">
+  </a>
+  <a href="https://arxiv.org/abs/2603.23711">
+    <img src="https://img.shields.io/badge/arXiv-2603.23711-b31b1b" alt="arXiv">
+  </a>
+  <a href="docs/DATA_DOWNLOAD.md">
+    <img src="https://img.shields.io/badge/Dataset-STT4AT-green" alt="Dataset">
+  </a>
+  <a href="docs/DATA_DOWNLOAD.md">
+    <img src="https://img.shields.io/badge/Checkpoint-dCAP-blue" alt="Checkpoint">
+  </a>
+</p>
+
+**Morui Zhu, Yongqi Zhu, Song Fu, Qing Yang**
+
+Official code release for the CVPR 2026 paper **"Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks"**.
+
+</div>
+
+---
 
 ## Overview
 
-Autonomous trucking introduces dynamic inter-rig geometry due to tractor–trailer articulation, breaking the static calibration assumption used in most multi-view perception systems.
+`dCAP` addresses a core challenge in autonomous trucking: the tractor-trailer system is **articulated**, so cross-rig camera extrinsics are **time-varying** rather than fixed.
 
-dCAP is a vision-based framework for online 6-DoF tractor–trailer pose estimation and articulated perception.
-
-The official code, pretrained models, and the STT4AT benchmark will be released soon.
-
+This repository provides:
+- a dynamic trailer camera pose pipeline (`dcap.camera_pose`)
+- an articulated downstream perception pipeline built on BEVFormer (`dcap.perception.bevformer`)
+- the `STT4AT` benchmark and devkit assets for reproduction
+- runnable training/evaluation scripts and released checkpoints
 
 ## News
 
-- **2026/02/21** 🎉 Paper accepted to CVPR 2026  
-- Code and dataset release coming soon in February, 2026
+- **2026-04-01**: 🎉 Code, checkpoints, and STT4AT dataset assets are released.
+- **2026-04-01**: Paper is available on arXiv: [2603.23711](https://arxiv.org/abs/2603.23711).
+
+## Resources
+
+- [Installation](docs/INSTALL.md)
+- [Data & Weights](docs/DATA_DOWNLOAD.md)
+- [Train & Eval](docs/TRAIN_EVAL.md)
+
+## Citation
+
+```bibtex
+@article{zhu2026mind,
+  title={Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks},
+  author={Zhu, Morui and Zhu, Yongqi and Fu, Song and Yang, Qing},
+  journal={arXiv preprint arXiv:2603.23711},
+  year={2026}
+}
+```
+
+## Acknowledgements
+
+- [BEVFormer](https://github.com/fundamentalvision/BEVFormer)
+- [VGGT](https://github.com/facebookresearch/vggt)
+- [Bench2Drive](https://github.com/Thinklab-SJTU/Bench2Drive)
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
