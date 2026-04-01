@@ -38,7 +38,6 @@ data/
 
 ## Notes
 - The released `v1.0-mini/calibrated_sensor.json` corresponds to the ground-truth calibration annotation used in the paper release.
-- `samples.zip` in this release excludes the filtered `2026_01_22` subset.
 
 ## Dataset Format
 
